@@ -50,7 +50,7 @@ The Weather Forecast App gives you the most accurate world-leading global weathe
 
 * Use the git clone command along with the copied URL from earlier. $ git clone [https://github.com/Prachip9767/weather_whiz_app.git](https://github.com/Prachip9767/weather_whiz_app.git )
 
-* Press Enter. $ git clone https://github.com/Prachip9767/weather_forcast_app.git Cloning into Git … remote: Counting objects: 13, done. remote: Compressing objects: 100% (13/13), done. remove: Total 13 (delta 1), reused 0 (delta 1) Unpacking objects: 100% (13/13), done.
+* Press Enter. $ git clone [https://github.com/Prachip9767/weather_forcast_app.git](https://github.com/Prachip9767/weather_whiz_app.git) Cloning into Git … remote: Counting objects: 13, done. remote: Compressing objects: 100% (13/13), done. remove: Total 13 (delta 1), reused 0 (delta 1) Unpacking objects: 100% (13/13), done.
 
 Congratulations, you have created your first local clone from your remote Github repository.
 
