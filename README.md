@@ -10,12 +10,14 @@ The Weather Forecast App gives you the most accurate world-leading global weathe
 
 
 # Things we used while making this application✨
+
 * MVC-Architecture
 * GitHub
-* Gridview Builder
+* Listview Builder
 * HTTP library
 * weather icons library
 * Navigation
+* wheather api
   
 # state management
 * Provider
