@@ -31,7 +31,7 @@ The Weather Forecast App gives you the most accurate world-leading global weathe
 
 * Step 1: Open your Android Studio then go to the File > New > Project from Version Control as shown in the below image.
 * Step 2: After clicking on the Project from Version Control a pop-up screen will arise like below. In the Version control choose Git from the drop-down menu.
-* Step 3: Then at last paste this ([ https://github.com/Prachip9767/weather_forcast_app.git](https://github.com/Prachip9767/weather_whiz_app.git) ) link in the URL and choose your Directory. Click on the Clone button and you are done.
+* Step 3: Then at last paste this ([[https://github.com/Prachip9767/weather_whiz_app.git]([https://github.com/Prachip9767/weather_whiz_app.git])] ) link in the URL and choose your Directory. Click on the Clone button and you are done.
 
 
 # Clone this Repo To Your System Using GitBash✨
