@@ -5,6 +5,8 @@ import 'package:weather_whiz_app/custom_widgets/city_selection_screen.dart';
 import 'package:weather_whiz_app/theme/app_color.dart';
 import '../custom_widgets/weather_card_item.dart';
 
+/// The main screen for displaying weather information.
+
 class WeatherHomePage extends StatefulWidget {
   const WeatherHomePage({Key? key}) : super(key: key);
 
@@ -13,11 +15,14 @@ class WeatherHomePage extends StatefulWidget {
 }
 
 class _WeatherHomePageState extends State<WeatherHomePage> {
+  /// The controller for managing weather-related functionality and state.
+
   late WeatherController weatherController;
 
   @override
   void initState() {
     super.initState();
+    ///Initialize the WeatherController and fetch initial data.
     weatherController = Provider.of<WeatherController>(context, listen: false);
     weatherController.fetchCity();
     weatherController.fetchWeather();
@@ -31,7 +36,8 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
         title: const Text('Weather Whiz'),
         elevation: 4,
         actions: [
-          OutlinedButton(
+          /// Button to navigate to the CitySelectionScreen for adding a location.
+      OutlinedButton(
             child: const Text(
               'Add Location',
               style: TextStyle(
@@ -53,7 +59,7 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
                     },
                   ),
                 ),
-              ); // Reset the loading state when the screen pops
+              );
             },
           )
         ],
@@ -61,10 +67,11 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
       body: Consumer<WeatherController>(
         builder: (context, weatherProvider, child) {
           if (weatherController.isLoading==true) {
-            print('show loader');
-            return Center(child: CircularProgressIndicator()); // Show loader
+            return Center(child: CircularProgressIndicator());
           } else {
-            print(weatherController.isLoading);
+
+            /// Display weather information once data is loaded.
+
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(

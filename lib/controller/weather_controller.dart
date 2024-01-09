@@ -8,16 +8,21 @@ import 'package:weather_whiz_app/network/api_service.dart';
 
 import '../main.dart';
 
+/// A class that manages weather-related functionality and state using the Provider package.
+
 class WeatherController with ChangeNotifier {
-  final List<WeatherForecastModal> _weatherData = [];
+
+  final List<WeatherForecastModal> _weatherData = [];   /// List to store weather forecast data.
   CitiesData? cities;
-  final WeatherApiService _weatherAPI = WeatherApiService();
-  bool isLoading = false;
-  TextEditingController textEditingController = TextEditingController();
-  String? selectedValue;
+  final WeatherApiService _weatherAPI = WeatherApiService();/// Instance of the WeatherApiService for making API calls.
 
-  List<WeatherForecastModal> get weatherData => _weatherData;
+  bool isLoading = false; /// A flag to indicate whether data is currently being loaded.
 
+  String? selectedValue; /// The currently selected value from the dropdown.
+
+  List<WeatherForecastModal> get weatherData => _weatherData;   /// Getter for accessing the private weather data list.
+
+  /// Asynchronous method to fetch weather data.
   Future<void> fetchWeather() async {
     isLoading = true;
     notifyListeners();
@@ -32,6 +37,7 @@ class WeatherController with ChangeNotifier {
     }
   }
 
+  /// Asynchronous method to fetch city data.
   Future<void> fetchCity() async {
     try {
       cities = await _weatherAPI.fetchCities();
@@ -41,9 +47,16 @@ class WeatherController with ChangeNotifier {
       notifyListeners();
     }
   }
+  /// Helper method to map weather icon codes to corresponding WeatherIcons.
 
   IconData getWeatherIconFromCode(String iconCode) {
     switch (iconCode) {
+    /** Maps various weather icon codes to corresponding WeatherIcon data
+    Returns appropriate WeatherIcon based on the provided icon code
+    If no match is found, returns WeatherIcons.na
+    (These icons are typically used to display weather conditions in the UI)
+    Example: "01d" represents a sunny day, "09d" represents rain, etc.
+    (WeatherIcons is a package that provides weather-related icons) **/
       case "01d":
         return WeatherIcons.day_sunny;
       case "01n":
@@ -79,11 +92,13 @@ class WeatherController with ChangeNotifier {
     }
   }
 
+  /// Helper method to convert temperature from Kelvin to Celsius.
   double temperatureToCelsius(double tempData) {
     double temp = tempData - 273.15;
     return temp;
   }
 
+  /// Helper method to convert Unix timestamp to IST formatted time.
   String convertUnixTimestampToIST(int timestamp) {
     final int millisecondsSinceEpoch = timestamp * 1000;
     final DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(millisecondsSinceEpoch);

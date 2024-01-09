@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Widget for selecting a city from a dropdown list.
+
 class CitySelectionScreen extends StatelessWidget {
   final List<String> cities;
   final String? selectedValue;
@@ -48,8 +50,8 @@ class CitySelectionScreen extends StatelessWidget {
           value: selectedValue,
           onChanged: (String? newValue) {
             if (newValue != null) {
-              onValueChanged(newValue); // Inform the WeatherController about the new selection
-              Navigator.of(context).pop(); // Pop immediately after selection
+              onValueChanged(newValue); /// Inform the WeatherController about the new selection
+              Navigator.of(context).pop(); /// Pop immediately after selection
             }
           },
           items: cities.map((String value) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_whiz_app/data/weather_forecast_data.dart';
 
+/// Widget to display weather information in a card format.
 class WeatherCard extends StatelessWidget {
   final WeatherForecastModal weatherData;
   final IconData Function(String) getWeatherIconFromCode;
@@ -71,9 +72,13 @@ class WeatherCard extends StatelessWidget {
     );
   }
 
+  /// Format temperature to a string with two decimal places.
+
   String _formatTemperature(double temperature) {
     return temperatureToCelsius(temperature).toStringAsFixed(2);
   }
+
+  ///Build a row for displaying additional information (label and value).
 
   Widget _buildInfoRow(String label, String value) {
     return Row(
