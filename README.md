@@ -60,12 +60,11 @@ Congratulations, you have created your first local clone from your remote Github
 * cupertino_icons: 1.0.2
 * http: 1.1.0
 *  get: 4.6.5
-*  cached_network_image: 3.3.1
-*  firebase_auth: ^4.15.0
-*  firebase_core: ^2.24.0
-*  sqflite: 2.3.0
 *  weather_icons: 3.0.0
 *  intl: 0.17.0
 *  provider: 6.0.0
+*  uses-material-design: true
+*  Postman
+*  gitHub
     
 # Thank You✨
